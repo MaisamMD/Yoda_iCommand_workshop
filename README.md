@@ -5,7 +5,7 @@
 * Introduction
 * Practical matters
 * Configuring iCommands for Geo-YoDa
-* Hands-on exercises
+* Handson exercises
 
 ## Introduction
 This workshop is designed for the beginner users to use the basics of iCommands in YoDa. The users should have access to an environment where iRODS is already installed before the workshop.
@@ -101,4 +101,4 @@ and fill your **Data Access Password** where it is asked and press enter. If it 
     ipwd
 which should give you the current directory on YoDa (should be this : /nluu11p/home).
 
-## Hands-on exercises
+## Handson exercises
