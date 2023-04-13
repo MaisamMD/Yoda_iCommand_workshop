@@ -42,12 +42,15 @@ If you use eejit or Snellius in the workshop, you can load iRODS madule easily v
 Run the following commands:
 
     module load opt/all
-
+ then
+ 
     module load iRODS/4.2.8
 
 **Snellius:**
 
     module load 2021
+then
+
     module load iRODS-iCommands/4.3.0
 ## Configuring iCommands for Geo-YoDa
 After the iRODS madule is loaded, you need to configure the iRODS to interact with Geo-YoDa, To do that you need to follow the steps below:
