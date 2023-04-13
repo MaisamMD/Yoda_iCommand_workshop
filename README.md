@@ -66,3 +66,36 @@ if the ".irods" directory is in the list, go to the step 2, otherwise make it vi
 If the .irods directory did not exist and you create it in the first step, you need to create and iRODS config file as well via:
 
     touch .irods/irods_environment.json
+
+Then open the irods_environment.json file:
+
+    nano .irods/irods_environment.json
+
+and copy/past the following text block:
+
+    {
+    "irods_host": "geo.data.uu.nl",
+    "irods_port": 1247,
+    "irods_home": "/nluu11p/home",
+    "irods_user_name": "exampleuser@uu.nl",
+    "irods_zone_name": "nluu11p",
+    "irods_authentication_scheme": "pam",
+    "irods_encryption_algorithm": "AES-256-CBC",
+    "irods_encryption_key_size": 32,
+    "irods_encryption_num_hash_rounds": 16,
+    "irods_encryption_salt_size": 8,
+    "irods_client_server_negotiation": "request_server_negotiation"
+    }
+ 
+ then modify the 4th line and put your email address instead of exampleuser@uu.nl and save the file(using ctrl+x -> y -> press enter).
+
+**3. Login to YoDa**
+Now, you can login to YoDa via:
+
+    iinit
+and fill your **Data Access Password** where it is asked and press enter. If it does not show any error message, you have succefully logged in. you can test it by 
+
+    ipwd
+which should give you the current directory on YoDa (should be this : /nluu11p/home).
+
+## Hands-on exercises
