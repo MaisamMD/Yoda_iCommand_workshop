@@ -101,4 +101,96 @@ and fill your **Data Access Password** where it is asked and press enter. If it 
     ipwd
 which should give you the current directory on YoDa (should be this : /nluu11p/home).
 
-## Handson exercises
+## Hands-on exercises
+
+**Linux (shell) commands vs iCommands**
+
+The commands in iRODS have the same logic as Linux commands. To start working with iCommands, it is recommended to have a basic undestanding of Linux (shell) commands. Here are few of them:
+
+| Shell commands | Description |
+| ------ | ------ |
+| pwd | Show the current directory |
+| cd <path-to-a-directory> | Navigate to a directory|
+| ls | list of the files and folders in the directory |
+| mkdir <name-of-directory> | Make a new directory |
+| touch <name_and_format_of_the_file>| Make a new file |
+| cp <path_to_the_file> <path_to_the_destination> | Copy a file to another directory (with cp -r it works for folders as well) |
+
+Most of the the commands being used in iCommands are the same as Linux shell commands begining with an "i". For instance:
+
+| iCommands | Description |
+| ------ | ------ |
+| ipwd | Show the current directory of iRODS/YoDa|
+| icd <path-to-a-directory> | Navigate to a directory on iRODS/YoDa|
+| ils | list of the files and folders in the directory in iRODS/YoDa |
+| ... | ... |
+
+You can find a list of the most used iCommands [here](iCommands_list.md).
+
+### E1: Using the ihelp and help option
+
+Get the list of iCommands using ihelp:
+
+    ihelp
+and then get information of one of the iCommands using the -h option; for instance:
+
+    iget -h
+
+### E2: Check your current directory on YoDa
+
+Check your current directory and navigate to the workshop directory
+
+    ipwd
+    
+and navigate to the workshop directory:
+
+    icd /nluu11p/home/research-workshop
+    
+Check again your current directory using ipwd to make sure that you are there.
+
+### E3: create your own sub-directory on YoDa
+
+Now you are in the workshop directory, here make a sub-directory with test_yourname via the command below:
+
+    imkdir test_yourname
+    
+Then navigate to the folder that you created using icd
+
+### E4: Create a file on your local machine
+
+You can create a file with a specific size via (follow the file_yourname convention):
+
+    truncate -s 10M file_maisam.txt
+    
+and check if it is created with the given size:
+
+    ls -lh file_maisam.txt    
+
+### E5: Upload file to YoDa
+
+Now, you can upload the file that you created to YoDa via:
+
+    iput -fvP -N 16 file_maisam.txt /nluu11p/home/research-workshop/test_yourname
+    
+*To upload a folder to YoDa you need to add "r" to the options list*
+
+### E6: Download data from YoDa
+
+Let's download file from YoDa via:
+
+    iget -fvP -N 16 /nluu11p/home/research-workshop/download_test.txt
+
+*To download a folder to YoDa you need to add "r" to the options list*
+
+### E7: Synchronize YoDa folder with local directory
+
+Synching sometimes a good way to make sure that your data on YoDa is the same version as on your local storage:
+
+Make a new folder on your local machine:
+
+    mkdir sync_maisam
+    truncate -s 5M sync_maisam/sync_file.txt
+
+Then sync the new folder with you folder on YoDa
+
+    irsync -rkv sync_maisam i:/nluu11p/home/research-workshop/test_maisam
