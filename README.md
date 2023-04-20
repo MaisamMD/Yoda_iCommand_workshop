@@ -193,4 +193,4 @@ Make a new folder on your local machine:
 
 Then sync the new folder with you folder on YoDa
 
-    irsync -rkv sync_maisam i:/nluu11p/home/research-workshop/test_maisam
+    irsync -rKv sync_maisam i:/nluu11p/home/research-workshop/test_maisam
